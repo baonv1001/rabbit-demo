@@ -1,6 +1,8 @@
 package com.rabbitmq.rabbitmqdemo.dto;
 
-public class SimpleMessage {
+import java.io.Serializable;
+
+public class SimpleMessage implements Serializable {
     private String name;
     private String description;
 
