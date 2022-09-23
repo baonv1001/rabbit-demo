@@ -12,8 +12,10 @@ public class Publisher {
         ConnectionFactory factory = buildConnectionFactory();
         try (Connection connection = factory.newConnection();
              Channel channel = connection.createChannel()){
-            String message = "Hihi";
-            channel.basicPublish("", "MyQueue", null, message.getBytes());
+            String[] messages = new String[]{"one", "two", "three", "four"};
+            for(String message : messages) {
+                channel.basicPublish("", "MyQueue", null, message.getBytes());
+            }
         } catch (IOException | TimeoutException e) {
             throw new RuntimeException(e);
         }
