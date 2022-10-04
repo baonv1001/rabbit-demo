@@ -34,7 +34,7 @@ public class RabbitMQConfiguration {
         cf.setPort(5672);
         cf.setUsername("eq-dev");
         cf.setPassword("eq-dev");
-        cf.setVirtualHost("eq-dev");
+        cf.setVirtualHost("sb-host");
         cf.setAutomaticRecoveryEnabled(false);
 
         return new CachingConnectionFactory(cf);

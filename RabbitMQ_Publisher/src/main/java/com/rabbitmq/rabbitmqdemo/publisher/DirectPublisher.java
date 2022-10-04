@@ -8,15 +8,14 @@ import com.rabbitmq.rabbitmqdemo.util.ConnectionUtil;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
-public class Publisher {
+public class DirectPublisher {
     public static void main(String[] args) {
         ConnectionFactory factory = ConnectionUtil.buildConnectionFactory();
         try (Connection connection = factory.newConnection();
              Channel channel = connection.createChannel()){
-            String[] messages = new String[]{"one", "two", "three", "four"};
-            for(String message : messages) {
-                channel.basicPublish("", "MyQueue", null, message.getBytes());
-            }
+            String message = "This is mobile";
+
+            channel.basicPublish("sb.direct", "tv", null, message.getBytes());
         } catch (IOException | TimeoutException e) {
             throw new RuntimeException(e);
         }

@@ -30,7 +30,7 @@ public class Consumer {
             System.out.println("Message received = " + message);
         };
 
-        channel.basicConsume("MyQueue", true, deliverCallback, consumerTag -> {});
+        channel.basicConsume("sb.mobile", true, deliverCallback, consumerTag -> {});
 //        channel.basicConsume("MyQueue", false, deliverCallback, consumerTag -> {});
     }
 
