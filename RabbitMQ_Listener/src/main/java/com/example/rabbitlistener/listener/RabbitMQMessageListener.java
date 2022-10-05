@@ -3,6 +3,7 @@ package com.example.rabbitlistener.listener;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageListener;
 
+// Step 4: handle message
 public class RabbitMQMessageListener implements MessageListener {
     @Override
     public void onMessage(Message message) {

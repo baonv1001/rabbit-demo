@@ -23,6 +23,7 @@ public class RabbitMQConfig {
 
     private static final String MY_QUEUE = "MyQueue";
 
+    // Step 1: define queue and exchange
     @Bean
     public Queue myQueue() {
         return new Queue(MY_QUEUE, true);
@@ -35,6 +36,7 @@ public class RabbitMQConfig {
                 .build();
     }
 
+    // Step 2: define binding to bind exchanges to queues for message delivery
     @Bean
     public Binding binding() {
 //        return new Binding(MY_QUEUE, Binding.DestinationType.QUEUE, "MyTopicExchange", "topic", null);
@@ -56,6 +58,7 @@ public class RabbitMQConfig {
         return cachingConnectionFactory;
     }
 
+    // Step 3: config message listener with connection, queue, RabbitMQMessageListener
     @Bean
     public MessageListenerContainer messageListenerContainer() {
         SimpleMessageListenerContainer simpleMessageListenerContainer = new SimpleMessageListenerContainer();

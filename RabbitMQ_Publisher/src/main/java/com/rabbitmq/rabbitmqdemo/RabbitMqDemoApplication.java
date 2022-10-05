@@ -7,6 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+// Secondly, Run Publisher
 @SpringBootApplication
 public class RabbitMqDemoApplication implements CommandLineRunner {
 
@@ -17,6 +18,7 @@ public class RabbitMqDemoApplication implements CommandLineRunner {
         SpringApplication.run(RabbitMqDemoApplication.class, args);
     }
 
+    // Step 5: push message to queue through exchanges
     @Override
     public void run(String... args) throws Exception {
         SimpleMessage simpleMessage = new SimpleMessage("message name", "the first message");
