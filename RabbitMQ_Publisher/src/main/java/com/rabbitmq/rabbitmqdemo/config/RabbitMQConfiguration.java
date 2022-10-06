@@ -49,7 +49,6 @@ public class RabbitMQConfiguration {
     RabbitTemplate rabbitTemplate(org.springframework.amqp.rabbit.connection.ConnectionFactory  cf,
                                   ObjectMapper mapper) {
         RabbitTemplate template = new RabbitTemplate(cf);
-        template.setExchange(EXCHANGE_NAME);
         RetryTemplate retry = new RetryTemplate();
         ExponentialBackOffPolicy backOff = new ExponentialBackOffPolicy();
         backOff.setInitialInterval(1000);
