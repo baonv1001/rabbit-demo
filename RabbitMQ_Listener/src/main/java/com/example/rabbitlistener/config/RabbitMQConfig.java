@@ -53,7 +53,7 @@ public class RabbitMQConfig {
         CachingConnectionFactory cachingConnectionFactory = new CachingConnectionFactory("localhost");
         cachingConnectionFactory.setUsername("eq-dev");
         cachingConnectionFactory.setPassword("eq-dev");
-        cachingConnectionFactory.setVirtualHost("eq-dev");
+        cachingConnectionFactory.setVirtualHost("sb-host");
 
         return cachingConnectionFactory;
     }

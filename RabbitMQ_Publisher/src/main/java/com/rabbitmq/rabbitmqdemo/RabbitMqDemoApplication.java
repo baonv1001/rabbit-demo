@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 // Secondly, Run Publisher
 @SpringBootApplication
 public class RabbitMqDemoApplication implements CommandLineRunner {
-
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
