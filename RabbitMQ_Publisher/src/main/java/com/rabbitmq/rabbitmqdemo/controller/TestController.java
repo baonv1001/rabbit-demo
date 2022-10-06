@@ -18,8 +18,8 @@ public class TestController {
     public String testAPI(@PathVariable("name") String name) {
         System.out.println("Name: " + name);
         Person person = new Person(1L, name);
-        rabbitTemplate.convertAndSend("sb.mobile", person);
-//        rabbitTemplate.convertAndSend("sb.direct", "tv", person);
+//        rabbitTemplate.convertAndSend("sb.mobile", person);
+        rabbitTemplate.convertAndSend("sb.direct", "tv", person);
         return "Success";
     }
 }

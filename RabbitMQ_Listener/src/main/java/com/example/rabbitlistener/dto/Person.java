@@ -1,4 +1,4 @@
-package com.rabbitmq.rabbitmqdemo.dto;
+package com.example.rabbitlistener.dto;
 
 import java.io.Serializable;
 
